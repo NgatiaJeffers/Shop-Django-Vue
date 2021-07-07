@@ -1,0 +1,12 @@
+
+Todo:
+  ✔ Install and setup (Django) @done(21-07-07 02:43)
+  ✔ Install and setup (vue) @done(21-07-07 02:43)
+  ✔ Include Font Awesome @done(21-07-07 02:43)
+  ✔ Setup the base template @done(21-07-07 02:43)
+  ✔ Create django app and models for products @done(21-07-07 02:46)
+  ✔ Create simple front page (lates products) @done(21-07-07 03:20)
+  ☐ View a product - create viewset in Django
+                    - Create vue page for showing products
+                    - Add link to detail
+  ☐ Set the app Vuex / State 
