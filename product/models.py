@@ -24,7 +24,7 @@ class Product(models.Model):
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = CloudinaryField('image')
-    thumbnail = CloudinaryField('image')
+    thumbnail = CloudinaryField('image', transformation=[{"width":200, "crop" : "pad"}])
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
