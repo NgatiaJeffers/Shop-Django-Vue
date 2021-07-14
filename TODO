@@ -6,8 +6,30 @@ Todo:
   ✔ Setup the base template @done(21-07-07 02:43)
   ✔ Create django app and models for products @done(21-07-07 02:46)
   ✔ Create Serializers and views models for products @done(21-07-07 03:22)
-  ✔ Create simple front page (lates products) @done(21-07-09 13:06)
-  ☐ View a product - create viewset in Django
-                    - Create vue page for showing products
-                    - Add link to detail
-  ☐ Set the app Vuex / State 
+  ✔ Create simple front page (latest products) @done(21-07-09 13:06)
+  ✔ View a product - create viewset in Django @done(21-07-09 14:13)
+                    ✔ Create vue page for showing products @done(21-07-09 14:13)
+                    ✔ Add link to detail @done(21-07-09 14:13)
+  ✔ Set the app Vuex / State @done(21-07-09 14:17)
+  ✔ Make it possible to add to cart - Add functionality to veux @done(21-07-09 14:26)
+                                    ✔ Initializ store in app.vue @done(21-07-09 15:27)
+                                    ✔ Add button to product page @done(21-07-09 15:27)
+                                    ✔ Show a toast message @done(21-07-09 15:40)
+  ☐ Implement a loading bar
+  ☐ Set document title (All Pages)
+  ☐ MAke it possibl to view a category
+               - Convert the product to a component
+  ☐ Add search functionality
+  ☐ View cart
+     - A cart item should be a component
+  ☐ Change content of cart
+      - Increment/Decrement content
+      - Remove from cart
+  ☐ Make it possible to sign up
+  ☐ Make it possible to log in
+  ☐ Create a simple account page
+  ☐ Proceed to checkout (Authentication)
+  ☐ Create a simple success page
+  ☐ Show my orders on the account
+      - An order should be a component
+  ☐ 

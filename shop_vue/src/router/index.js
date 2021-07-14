@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from "../views/Home.vue";
+import Product from "../views/Product.vue";
 
 const routes = [
   {
@@ -8,6 +9,14 @@ const routes = [
     component: Home,
     meta: {
       title: 'Home'
+    }
+  },
+  {
+    path: '/:category_slug/:product_slug/',
+    name: 'Product',
+    component: Product,
+    meta: {
+      title: 'Product'
     }
   },
 ]

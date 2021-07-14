@@ -10,12 +10,13 @@
           <router-link class="link" to="#">Winter</router-link>
           <router-link class="link" to="#">Login/Register</router-link>
           <router-link class="link" to="#">
-              <span>Cart</span>
-              <span class="icon"><i class="fas fa-shopping-bag"></i></span>
+            <span class="icon"><i class="fas fa-shopping-bag"></i></span>
+              <span>Cart ({{ cartTotalLength }})</span>
           </router-link>
         </ul>
       </div>
     </nav>
+
 <img src="../assets/Icons/bars-regular.svg"  @click="toggleMobileNav" class="menu-icon" v-show="mobile">
 <!-- <menuIcon @click="toggleMobileNav" class="menu-icon" v-show="mobile" /> -->
 <transition name="mobile-nav">
@@ -30,6 +31,10 @@
       </ul>
     </transition>
   </header>
+
+  <div class="is-loading-bar has-text-centered mt-6" :class="{ 'is-loadig': $store.state.isLoading }">
+    <div class="lds-dual-ring"></div>
+  </div>
 </template>
 
 <script>
@@ -43,6 +48,9 @@ export default {
       mobile: null,
       mobileNav: null,
       windowWidth: null,
+      cart: {
+        items: []
+      },
     };
   },
   created() {
@@ -63,6 +71,25 @@ export default {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
     },
+  },
+  // Initialize store
+  beforeCreate() {
+    this.$store.commit('initializeStore')
+  },
+    mounted() {
+    this.cart = this.$store.state.cart
+  },
+  // Increment items in cart
+  computed: {
+    cartTotalLength() {
+      let totalLength = 0
+
+      for (let i = 0; i < this.cart.items.length; i++) {
+        totalLength += this.cart.items[i].quantity
+      }
+
+      return totalLength;
+    }
   },
 };
 </script>
@@ -151,6 +178,45 @@ header {
   }
   .mobile-nav-leave-to {
     transform: translateX(-250px);
+  }
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-block: 50%;
+  border: 6px solid #ccc;
+  border-color: #ccc transparent #ccc transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.is-loading-bar {
+  height: 0;
+  overflow: hidden;
+
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &.is-loading {
+    height: 80px;
   }
 }
 </style>
