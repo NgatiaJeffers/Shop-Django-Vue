@@ -15,8 +15,13 @@ Todo:
                                     ✔ Initializ store in app.vue @done(21-07-09 15:27)
                                     ✔ Add button to product page @done(21-07-09 15:27)
                                     ✔ Show a toast message @done(21-07-09 15:40)
+<<<<<<< HEAD
   ☐ Implement a loading bar
   ☐ Set document title (All Pages)
+=======
+  ✔ Implement a loading bar @done(21-09-02 10:54)
+  ✔ Set document title (All Pages) @done(21-09-02 10:57)
+>>>>>>> A while since I committed
   ☐ MAke it possibl to view a category
                - Convert the product to a component
   ☐ Add search functionality
