@@ -3,8 +3,8 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Product
-from .serializers import ProductSerializer
+from .models import Product, Category
+from .serializers import ProductSerializer, CategorySerializer
 
 # Create your views here.
 class LatestProductsList(APIView):
@@ -23,9 +23,6 @@ class ProductDetail(APIView):
     def get(self, request, category_slug, product_slug, format=None):
         product = self.get_object(category_slug, product_slug)
         serializer = ProductSerializer(product)
-<<<<<<< HEAD
-        return Response(serializer.data)
-=======
         return Response(serializer.data)
 
 class CategoryDetail(APIView):
@@ -39,4 +36,3 @@ class CategoryDetail(APIView):
         category = self.get_object(category_slug)
         serializer = CategorySerializer(category)
         return Response(serializer.data)
->>>>>>> A while since I committed

@@ -6,7 +6,7 @@
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
-          <router-link class="link" to="#">Summer</router-link>
+          <router-link class="link" :to="'Category'">Summer</router-link>
           <router-link class="link" to="#">Winter</router-link>
           <router-link class="link" to="#">Login/Register</router-link>
           <router-link class="link" to="#">
